@@ -64,6 +64,7 @@ public class Todo {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", created=" + created +
+                ", completed=" + completed +
                 '}';
     }
 }

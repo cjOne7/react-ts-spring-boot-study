@@ -49,7 +49,7 @@ public class TodoController {
 
     @CrossOrigin
     @PutMapping("/todo/{id}")
-    public ResponseEntity<Todo> updateTodo(@Valid @PathVariable Todo todo) {
+    public ResponseEntity<Todo> updateTodo(@Valid @RequestBody Todo todo) {
         log.info("Request to update todo: {}", todo);
         Todo result = todoRepo.save(todo);
         return ResponseEntity.ok().body(result);
