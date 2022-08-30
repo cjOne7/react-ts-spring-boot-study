@@ -22,13 +22,11 @@ public class TodoController {
         this.todoRepo = todoRepo;
     }
 
-    @ResponseBody
     @GetMapping("/todos")
     public List<Todo> todos() {
         return todoRepo.findAll();
     }
 
-    @ResponseBody
     @PostMapping("/todo")
     public ResponseEntity<Todo> addTodo(@Valid @RequestBody Todo todo) {
         log.info("Request to create todo: {}", todo);
@@ -41,7 +39,6 @@ public class TodoController {
         }
     }
 
-    @ResponseBody
     @CrossOrigin
     @DeleteMapping("/todo/{id}")
     public ResponseEntity<Todo> deleteTodo(@PathVariable Long id) {
@@ -50,7 +47,6 @@ public class TodoController {
         return ResponseEntity.ok().build();
     }
 
-    @ResponseBody
     @CrossOrigin
     @PutMapping("/todo/{id}")
     public ResponseEntity<Todo> updateTodo(@Valid @PathVariable Todo todo) {
